@@ -15,8 +15,6 @@ get '/tasks/new' do
 end
 
 post '/tasks' do
-  # create new task, persistent in DB
-  # binding.pry
   name = params[:name]
   details = params[:details]
 
@@ -26,7 +24,9 @@ post '/tasks' do
 end
 
 get '/tasks/:id' do
-  # gets individual task
+  sql = "SELECT * from tasks WHERE id = #{params[:id]}"
+  @return = run_sql(sql)
+  erb :show
 end
 
 get '/tasks/:id/edit' do

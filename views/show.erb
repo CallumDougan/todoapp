@@ -1,0 +1,9 @@
+<% @return.each do |task| %>
+  <h5>Task:</h5>
+  <p><%= task['name'] %></p>
+  <hr>
+  <h5>Details:</h5>
+  <p><%= task['details'] %></p>
+  <br>
+  <hr><hr>
+<% end %>
