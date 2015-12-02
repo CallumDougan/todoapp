@@ -1,0 +1,18 @@
+<form action="/tasks/<%= @id %>" method ='post'>
+  <label for='name'>Task:</label>
+  <textarea name='name'>
+    <%= @task['name'] %>
+  </textarea>
+
+  <br><br>
+  
+  <label for='details'>Details:</label>
+  <textarea name='details'>
+    <%= @task['details'] %>
+  </textarea>
+
+  <br><br>
+
+  <button>Edit task!</button>
+
+</form>

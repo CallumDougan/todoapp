@@ -31,10 +31,20 @@ end
 
 get '/tasks/:id/edit' do
   # edits individual task, commits to DB
+  @id = params[:id]
+  sql = "SELECT * from tasks WHERE id = #{params[:id]}"
+  @task = run_sql(sql).first
+
+  erb :edit
 end
 
 post '/tasks/:id' do
   # updates individual task :id in DB
+  name = params[:name]
+  details = params[:details]
+  sql = "UPDATE tasks SET name = '#{name}', details = '#{details}' WHERE id = #{params[:id]}"
+  run_sql(sql)
+  redirect to('/tasks')
 end
 
 post '/tasks/:id/delete' do
