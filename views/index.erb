@@ -1,0 +1,11 @@
+<h1>Welcome to TOO-DONE</h1>
+<h3>Your one stop OH SHIT I FORGOT solution</h3>
+<a href = '/tasks/new'>New task</a>
+
+<% @tasks.each do |task| %>
+  <h5>Task:</h5>
+  <p><%= task['name'] %></p>
+  <h5>Details:</h5>
+  <p><%= task['details'] %></p>
+  <hr>
+<% end %>
